@@ -116,11 +116,11 @@ export default function Home() {
       window.location.hostname === "127.0.0.1";
 
     if (isLocalhost) {
-      window.open("/sarinova.pdf", "_blank", "noopener,noreferrer");
+      window.open("/docs/sarinova.pdf", "_blank", "noopener,noreferrer");
       return;
     }
 
-    const absolutePdfUrl = `${window.location.origin}/sarinova.pdf`;
+    const absolutePdfUrl = `${window.location.origin}/docs/sarinova.pdf`;
     const viewerUrl = `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(absolutePdfUrl)}`;
     window.open(viewerUrl, "_blank", "noopener,noreferrer");
   };
@@ -509,7 +509,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center gap-3 mb-16">
             <a
-              href="/sarinova.pdf"
+              href="/docs/sarinova.pdf"
               onClick={openCompanyPdf}
               target="_blank"
               rel="noopener noreferrer"
@@ -519,7 +519,7 @@ export default function Home() {
               <span>View Full Company PDF</span>
             </a>
             <a
-              href="/sarinova.pdf"
+              href="/docs/sarinova.pdf"
               download="Sarinova_Company_Profile.pdf"
               title="Download Document"
               className="inline-flex items-center justify-center p-2.5 rounded-xl border transition-all hover:scale-105 border-slate-800 bg-slate-900/70 hover:bg-slate-800 text-slate-400 hover:text-purple-400"
