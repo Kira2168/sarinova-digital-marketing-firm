@@ -108,6 +108,23 @@ export default function Home() {
     }
   };
 
+  const openCompanyPdf = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+
+    if (isLocalhost) {
+      window.open("/sarinova.pdf", "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    const absolutePdfUrl = `${window.location.origin}/sarinova.pdf`;
+    const viewerUrl = `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(absolutePdfUrl)}`;
+    window.open(viewerUrl, "_blank", "noopener,noreferrer");
+  };
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -493,6 +510,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-3 mb-16">
             <a
               href="/sarinova.pdf"
+              onClick={openCompanyPdf}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-xs font-mono transition-all hover:scale-105 shadow-md border-purple-500/40 bg-purple-950/40 hover:bg-purple-900/50 text-purple-300 shadow-purple-950/40"
