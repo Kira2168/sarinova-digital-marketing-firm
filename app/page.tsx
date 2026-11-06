@@ -492,7 +492,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center gap-3 mb-16">
             <a
-              href="/sarinova-profile.pdf"
+              href="/sarinova.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border text-xs font-mono transition-all hover:scale-105 shadow-md border-purple-500/40 bg-purple-950/40 hover:bg-purple-900/50 text-purple-300 shadow-purple-950/40"
@@ -501,7 +501,7 @@ export default function Home() {
               <span>View Full Company PDF</span>
             </a>
             <a
-              href="/sarinova-profile.pdf"
+              href="/sarinova.pdf"
               download="Sarinova_Company_Profile.pdf"
               title="Download Document"
               className="inline-flex items-center justify-center p-2.5 rounded-xl border transition-all hover:scale-105 border-slate-800 bg-slate-900/70 hover:bg-slate-800 text-slate-400 hover:text-purple-400"
@@ -899,19 +899,14 @@ export default function Home() {
                   </div>
 
                   <div className="relative h-80 w-full bg-slate-950 overflow-hidden flex items-center justify-center">
-                    <video
-                      src={client.video}
-                      className="absolute inset-0 w-full h-full object-cover filter blur-xl opacity-40 scale-110 pointer-events-none"
-                      muted
-                      loop
-                      autoPlay
-                      playsInline
-                    />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(99,102,241,0.25),transparent_60%)] pointer-events-none" />
 
                     <video
                       id={`portfolio-vid-${client.id}`}
                       src={client.video}
                       className="relative h-full w-auto object-contain z-10"
+                      preload="metadata"
+                      poster={client.logo}
                       autoPlay
                       loop
                       muted
